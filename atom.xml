@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zenghongpeng.github.io/ruban.github.io</id>
     <title>RubanNotes</title>
-    <updated>2020-07-09T16:06:45.632Z</updated>
+    <updated>2020-07-09T16:27:50.230Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zenghongpeng.github.io/ruban.github.io"/>
     <link rel="self" href="https://zenghongpeng.github.io/ruban.github.io/atom.xml"/>
@@ -11,14 +11,14 @@
     <icon>https://zenghongpeng.github.io/ruban.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, RubanNotes</rights>
     <entry>
-        <title type="html"><![CDATA[静态博客生成器 - Hexo]]></title>
+        <title type="html"><![CDATA[静态博客生成器 Hexo（01）]]></title>
         <id>https://zenghongpeng.github.io/ruban.github.io/post/jing-tai-bo-ke-sheng-cheng-qi-hexo/</id>
         <link href="https://zenghongpeng.github.io/ruban.github.io/post/jing-tai-bo-ke-sheng-cheng-qi-hexo/">
         </link>
         <updated>2020-07-09T10:45:01.000Z</updated>
         <content type="html"><![CDATA[<p>今天我们来看看Hexo是什么东西！！</p>
 <h2 id="什么是hexo">什么是Hexo</h2>
-<p>官方说Hexo是一个快速、简洁且高效的博客框架，使用Markdown引擎解析文章，几秒内就可以生成一个静态网站。</p>
+<p>Hexo是一个快速、简洁且高效的博客框架，使用<code>Markdown</code>引擎解析文章，几秒内就可以生成一个静态网站。</p>
 <p>OK，官方都这么说了，那咱试试。</p>
 <h2 id="机器配置">机器配置</h2>
 <ul>
@@ -34,19 +34,17 @@ ok，咱们继续。</p>
 <pre><code class="language-shell"> $ npm install -g hexo-cli # 全局安装
 </code></pre>
 <h3 id="初始化目录">初始化目录</h3>
-<pre><code class="language-shell"># $targetDir 是创建docs的目录
-$ mkdir docs &amp;&amp;  hexo init docs 
+<pre><code class="language-shell">$ mkdir docs &amp;&amp;  hexo init docs 
 $ cd docs &amp;&amp; npm init # or yarn 
 </code></pre>
 <p>hexo 初始化好了，咱们看下目录结构。</p>
-<pre><code class="language-shell"> # 我是用yarn安装的。
-├── _config.yml # 网站配置信息
+<pre><code class="language-shell">├── _config.yml # 网站配置信息
 ├── node_modules # node 依赖包
 ├── package.json # 应用程序信息
 ├── scaffolds # 模板文件夹
 ├── source # 资源文件夹
 ├── themes # 主题文件夹
-└── yarn.lock # 记录 yarn 安装依赖的版本
+└── yarn.lock 
 </code></pre>
 <h3 id="启动">启动</h3>
 <p>OK，初始化好了之后，该跑起来了。</p>
@@ -61,28 +59,34 @@ $ hexo server
 <h3 id="生成静态文件">生成静态文件</h3>
 <pre><code class="language-shell">$ hexo generate
 </code></pre>
-<p>当目录中生成<code>public</code>目录时表示已经生成成功啦！接下我们要做的就是部署到 <code>Github Pages</code></p>
+<p>当目录中生成<code>public</code>目录时表示网站已经构建成功啦！ok, 接下我们要做的就是把网站部署到 <code>Github Pages</code>。</p>
 <h3 id="部署">部署</h3>
 <ul>
-<li>创建 GitHub 账号，并创建一个仓库 Token。点击<a href="https://github.com/">GitHub</a>，进行注册。登录 GitHub 之后，点击<a href="https://github.com/settings/tokens/new">这里</a>创建一个 Token，勾选上 repo 的相关权限即可。生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。</li>
-</ul>
-<figure data-type="image" tabindex="1"><img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594306458475.png" alt="" loading="lazy"></figure>
-<ul>
-<li><strong>创建仓库，存放构建后的网站文件</strong>。创建一个公开仓库，名为<strong>用户名.github.io</strong>。（将用户名替换为你的 GitHub 用户名）</li>
-</ul>
-<figure data-type="image" tabindex="2"><img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594306591575.png" alt="" loading="lazy"></figure>
-<ul>
-<li>安装<code>hexo-deployer-git</code></li>
+<li>
+<p><code>创建 GitHub 账号，并创建一个仓库 Token</code>。<br>
+1、点击<a href="https://github.com/">GitHub</a>，进行注册。<br>
+2、登录 GitHub 之后，点击<a href="https://github.com/settings/tokens/new">这里</a>创建一个 Token，勾选上 repo 的相关权限即可。<br>
+3、生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。<br>
+<img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594306458475.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p><code>创建仓库，存放构建后的网站文件</code>。<br>
+1、创建一个公开仓库，名为<code>hexo.github.io</code>。<br>
+<img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594306591575.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>安装<code>hexo-deployer-git</code></p>
+</li>
 </ul>
 <pre><code class="language-shell">$ npm install hexo-deployer-git 
 </code></pre>
 <ul>
-<li>打开**_config.yml**进行配置</li>
+<li>打开<code>_config.yml</code>进行配置</li>
 </ul>
 <pre><code class="language-shell"># URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://用户名.github.io/hexo.github.io/
-root: /用户名.github.io/
+root: /hexo.github.io/ # 记得配置这个
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -93,20 +97,22 @@ deploy:
   token: 'xxxx' # 这里是第一步生成的Token
 </code></pre>
 <ul>
-<li>运行 <code>hexo clean &amp;&amp; hexo deploy</code></li>
+<li>部署</li>
 </ul>
 <pre><code class="language-shell">$ hexo clean &amp;&amp; hexo deploy # 部署 过程中可能会提示输入用户名和token 
 </code></pre>
+<p>ok 看看是否部署上去了。<br>
+<img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594311343779.png" alt="" loading="lazy"></p>
 <ul>
-<li>ok 看看那是否部署上去了。<br>
-<img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594307406513.png" alt="" loading="lazy"></li>
+<li><code>Github Pages</code>配置<br>
+1、在仓库下找到<code>Settings</code>, 点击进入之后，找到<code>GitHub Pages</code>，<br>
+2、在<code>Source</code>中选择<code>gh-pages</code>分支。<br>
+3、访问<code>https://用户名.github.io/hexo.github.io/</code><br>
+<img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594309747382.png" alt="" loading="lazy"><br>
+<img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594309786962.png" alt="" loading="lazy"></li>
 </ul>
-<p>部署成功，但是别着急，还有最后一步要配置。<br>
-在仓库下找到<code>Settings</code>, 点击进入之后，找到<code>GitHub Pages</code>， 在<code>Source</code>中选择<code>gh-pages</code>分支. 访问<code>https://用户名.github.io/hexo.github.io/</code></p>
-<figure data-type="image" tabindex="3"><img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594309747382.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://zenghongpeng.github.io/ruban.github.io/post-images/1594309786962.png" alt="" loading="lazy"></figure>
-<p>部署好的<a href="https://zenghongpeng.github.io/hexo.github.io/">网站</a><br>
-<a href="https://github.com/zenghongpeng/archive/tree/master/hexo-docs">源码</a></p>
+<p>至此，我们已经生成一个静态网站并上传至<code>Github Pages</code>了，下面这个是示例和代码地址。</p>
+<p><a href="https://zenghongpeng.github.io/hexo.github.io/">示例</a>   <a href="https://github.com/zenghongpeng/archive/tree/master/hexo-docs">代码</a></p>
 ]]></content>
     </entry>
     <entry>
@@ -118,7 +124,7 @@ deploy:
         <content type="html"><![CDATA[<p>从14年来北京，那时候总想着写点什么程序，幻想着一朝成名，结果眼睛一闭一睁，5年过去了，哎，当初的抱负呢，当初的梦想呢！！哎。。。</p>
 <p>Gridea 关注一段时间了，确实是个好东西，突发奇想要不自己也弄一个试试，结果苦思冥想，参阅无数代码，还是毫无头绪，在这定个计划吧，督促一下自己。</p>
 <p>[ ] 分析市面上的静态博客生成器<br>
-[x]  Gridea<br>
+[ ]  Gridea<br>
 [ ]  Hexo<br>
 [ ]  Jekyll<br>
 [ ]  VuePress<br>
